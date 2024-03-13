@@ -30,7 +30,7 @@ public class OrderService {
         orderResponse.setRestaurant(savedOrder.getRestaurant());
         orderResponse.setFood(savedOrder.getFood());
         orderResponse.setHarga(savedOrder.getHarga());
-        kafkaTemplate.send("test", order);
+        kafkaTemplate.send("orders", savedOrder);
         return orderResponse;
     }
 }
